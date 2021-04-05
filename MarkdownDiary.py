@@ -21,8 +21,9 @@ def main(args):
                 index_file.write(f"\n## [{args.name}]({index_to_diary})\n")
         else:
             with open(args.index, "a", encoding="utf8") as index_file:
-                index_file.write(f"\n## [{args.name}]({index_to_diary})\n")
-        
+                if not os.path.exists(args.name):
+                    index_file.write(f"\n## [{args.name}]({index_to_diary})\n")
+
         diary_to_index = f"[{args.index.split('.')[0]}](../{args.index}) · "
         year_to_index = f"[{args.index.split('.')[0]}](../{args.index}) · "
         month_to_index = f"[{args.index.split('.')[0]}](../../{args.index}) · "
@@ -32,7 +33,6 @@ def main(args):
         year_to_index = ""
         month_to_index = ""
         day_to_index = ""
-
 
     os.makedirs(args.name, exist_ok=True)
     if not os.path.exists(os.path.join(args.name, diary_md)):
@@ -125,6 +125,12 @@ if __name__ == "__main__":
         action="store_true",
         help="Create file per day (default is file per month)",
     )
-    optional.add_argument("-i", "--index", help="Use index file (off by default, Index.md if turned on but not specified)", nargs="?", const="Index.md")
+    optional.add_argument(
+        "-i",
+        "--index",
+        help="Use index file (off by default, Index.md if turned on but not specified)",
+        nargs="?",
+        const="Index.md",
+    )
 
     main(parser.parse_args())
