@@ -18,7 +18,7 @@ def main(args):
         if not os.path.exists(args.index):
             with open(args.index, "x", encoding="utf8") as index_file:
                 index_file.write(f"# {args.index.split('.')[0]}\n")
-                index_file.write(f"\n## [{args.name}]({index_to_diary})\n")
+                index_file.write(f"\n- ## [{args.name}]({index_to_diary})\n")
         else:
             with open(args.index, "a", encoding="utf8") as index_file:
                 if not os.path.exists(args.name):
@@ -83,7 +83,7 @@ def main(args):
                                     day_md = f"{custom_strftime(day, '{S}')}.md"
                                     month_to_day = os.path.join(month_numbered, day_md)
                                     month_file.write(
-                                        f"\n## [{custom_strftime(day, '%A {S}')}]({month_to_day}) \n"
+                                        f"\n- ## [{custom_strftime(day, '%A {S}')}]({month_to_day}) \n"
                                     )
 
                                     day_path = os.path.join(month_folder, day_md)
@@ -95,7 +95,7 @@ def main(args):
                                         )
                                 else:
                                     month_file.write(
-                                        f"\n## {custom_strftime(day, '%A {S}')} \n"
+                                        f"\n> ## {custom_strftime(day, '%A {S}')} \n"
                                     )
 
 
