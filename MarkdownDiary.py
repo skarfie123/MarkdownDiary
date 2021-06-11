@@ -64,7 +64,7 @@ def main(args):
                     month_md = f"{month_numbered}.md"
                     year_to_month = os.path.join(str(year), month_md)
                     year_file.write(
-                        f"\n- ## [{date.strftime(date(year, month, 1), '%B')}]({year_to_month}) \n"
+                        f"\n- ## [{date.strftime(date(year, month, 1), '%B')}]({year_to_month})\n"
                     )
 
                     if args.daily:
@@ -83,7 +83,7 @@ def main(args):
                                     day_md = f"{custom_strftime(day, '{S}')}.md"
                                     month_to_day = os.path.join(month_numbered, day_md)
                                     month_file.write(
-                                        f"\n- ## [{custom_strftime(day, '%A {S}')}]({month_to_day}) \n"
+                                        f"\n- ## [{custom_strftime(day, '%A {S}')}]({month_to_day})\n"
                                     )
 
                                     day_path = os.path.join(month_folder, day_md)
@@ -95,7 +95,7 @@ def main(args):
                                         )
                                 else:
                                     month_file.write(
-                                        f"\n> ## {custom_strftime(day, '%A {S}')} \n"
+                                        f"\n> ## {custom_strftime(day, '%A {S}')}\n"
                                     )
 
 
