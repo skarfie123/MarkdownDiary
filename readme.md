@@ -12,7 +12,7 @@
 
 ## Example
 
-Create a diary called Diary, with years 2021, linked to index Main.md.
+Create a diary called Diary, with years 2021 and 2022, linked to index Main.md.
 
 > `MarkdownDiary.exe -n Diary -y 2021 2022 -i Main.md`
 
