@@ -98,8 +98,7 @@ def main(args):
                                         f"\n> ## {custom_strftime(day, '%A {S}')}\n"
                                     )
 
-
-if __name__ == "__main__":
+def cli():
     import argparse
 
     parser = argparse.ArgumentParser(description="Markdown Diary", add_help=False)
@@ -134,3 +133,6 @@ if __name__ == "__main__":
     )
 
     main(parser.parse_args())
+
+if __name__ == "__main__":
+    cli()
