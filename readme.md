@@ -16,10 +16,10 @@
 
 ## Example
 
-Create a diary called Diary, with years 2021, linked to index Main.md.
+Create a diary called Diary, with years 2021 and 2022, linked to index Main.md.
 
-> `markdown-diary -n Diary -y 2021 2022 -i Main.md`
+`markdown-diary -n Diary -y 2021 2022 -i Main.md`
 
 Add 2023 to Diary
 
-> `markdown-diary -n Diary -y 2023 -i Main.md`
+`markdown-diary -n Diary -y 2023 -i Main.md`
